@@ -11,7 +11,7 @@ authors:
     given-names: Adrian G.
 repository-code: "https://github.com/Ashores/CDGM"
 url: "https://github.com/Ashores/CDGM"
-abstract: "Project overview for CDGM, a causal-inspired graph memory framework for continual generative modeling. Implementation release is in preparation."
+abstract: "Project overview and FCSDM-derived data preparation utilities for CDGM, a causal-inspired graph memory framework for continual generative modeling. Method implementation release is in preparation."
 keywords:
   - continual learning
   - diffusion models

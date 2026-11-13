@@ -1,2 +1,5 @@
-# Coming soon.
-# Tested dependencies and version constraints will accompany the code release.
+# Dependencies for the released data preparation utilities only.
+numpy
+Pillow>=9.1
+scipy
+# CDGM training dependencies and pinned experiment environments: Coming soon.
