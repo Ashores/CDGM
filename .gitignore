@@ -1,0 +1,50 @@
+# Python and local environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+*.egg-info/
+.ipynb_checkpoints/
+
+# Credentials and machine-specific settings
+.env
+.env.*
+*.pem
+*.key
+.idea/
+.vscode/
+
+# Datasets, model weights, and experiment outputs
+data/
+datasets/
+checkpoints/
+outputs/
+results/
+runs/
+logs/
+wandb/
+*.pt
+*.pth
+*.ckpt
+*.pkl
+*.npy
+*.npz
+
+# Local manuscript and submission materials
+*.tex
+*.bib
+*.aux
+*.bbl
+*.blg
+*.log
+*.synctex.gz
+*.pdf
+*.docx
+*.zip
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+desktop.ini
