@@ -1,4 +1,4 @@
-# Dependencies for the released data preparation utilities only.
+# Dependencies for the released CDGM data preparation utilities.
 numpy
 Pillow>=9.1
 scipy

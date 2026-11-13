@@ -6,7 +6,7 @@
 
 Anhui University of Science and Technology · University of York
 
-**Data preparation utilities are available. CDGM method code: Coming soon.** This repository hosts the project overview and a portable subset of FCSDM data helpers. Training configurations and evaluation instructions will accompany the method release.
+**CDGM data preparation utilities are available. Method code: Coming soon.** This repository hosts the CDGM project overview and data preparation tools. Training configurations and evaluation instructions will accompany the method release.
 
 ## Overview
 
@@ -35,7 +35,7 @@ The graph provides a causal-inspired structural prior over observed features. Ex
 | Training and evaluation scripts | Coming soon |
 | Pre-trained models | Coming soon |
 
-The data utilities are adapted from our [FCSDM codebase](https://github.com/Ashores/FCSDM). They include local MNIST/Fashion-MNIST, CIFAR-10, and SVHN readers; RGB resizing and normalization; image-folder discovery; and class-group stream construction. See [data preparation](data_tools/README.md) for examples and provenance.
+The CDGM data utilities include local MNIST/Fashion-MNIST, CIFAR-10, and SVHN readers; RGB resizing and normalization; image-folder discovery; and class-group stream construction. See [data preparation](data_tools/README.md) for installation and usage examples.
 
 ```bash
 python -m pip install -r requirements.txt

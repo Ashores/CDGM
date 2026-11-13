@@ -1,4 +1,4 @@
-"""Local-file loaders adapted from FCSDM; no downloads, GPU imports, or training.
+"""CDGM local-file data loaders; source attribution is in PROVENANCE.md.
 
 Each loader returns uint8 images in NHWC layout and int64 class labels.
 Train/test partitions stay separate. Apply image.preprocess_image explicitly
@@ -83,7 +83,7 @@ def load_cifar10(root, split="train"):
 def load_svhn(path, label_mode="legacy"):
     """Read a local SVHN .mat file with fields X and y.
 
-    ``legacy`` preserves FCSDM's y-1 mapping (raw label 10 becomes 9).
+    ``legacy`` preserves the source y-1 mapping (raw label 10 becomes 9).
     ``digit`` maps raw label 10 to digit 0 and leaves labels 1..9 unchanged.
     Choose deliberately: the mapping affects the class order of the stream.
     """

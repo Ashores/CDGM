@@ -1,4 +1,4 @@
-"""Portable data preparation utilities adapted from FCSDM."""
+"""Data preparation utilities for CDGM; source attribution is in PROVENANCE.md."""
 
 from .image import list_image_files, load_image, preprocess_image, inverse_transform
 from .loaders import load_mnist, load_cifar10, load_svhn

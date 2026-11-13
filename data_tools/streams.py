@@ -1,4 +1,4 @@
-"""Class-group streams adapted from FCSDM Task_Split/Task_utilizes.py.
+"""CDGM class-group streams; source attribution is in PROVENANCE.md.
 
 Labels and task slices describe offline stream construction/evaluation. The
 unsupervised learner receives only the image stream, without these metadata.
@@ -23,7 +23,7 @@ def class_incremental_indices(labels, classes_per_task=2, class_order=None,
                               shuffle_within_task=False, seed=0):
     """Group indices by consecutive classes, preserving every input sample.
 
-    The default retains FCSDM's within-group sample order. Shuffling uses a
+    The default retains the original within-group sample order. Shuffling uses a
     local NumPy generator. No samples are duplicated or discarded.
     """
     ids = _class_ids(labels)
@@ -68,7 +68,7 @@ def build_class_incremental_stream(images, labels, classes_per_task=2,
 
 
 def Split_dataset_by5(x, y):
-    """Compatibility helper for FCSDM's five two-class, one-hot-label groups."""
+    """Compatibility helper for five two-class, one-hot-label groups."""
     x, y = np.asarray(x), np.asarray(y)
     if len(x) != len(y):
         raise ValueError("Images and labels must have matching lengths")
@@ -77,7 +77,7 @@ def Split_dataset_by5(x, y):
 
 
 def Split_Dataset_Five(train_data, train_labels, test_data, test_labels):
-    """FCSDM-compatible return order, keeping train/test partitions separate."""
+    """Legacy return order, keeping train/test partitions separate."""
     train = Split_dataset_by5(train_data, train_labels)
     test = Split_dataset_by5(test_data, test_labels)
     return list(train[::2]), list(train[1::2]), list(test[::2]), list(test[1::2])

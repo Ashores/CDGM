@@ -1,4 +1,4 @@
-"""Image helpers adapted from FCSDM datasets/Data_Loading.py and cv2_imageProcess.py."""
+"""CDGM image preprocessing helpers; source attribution is in PROVENANCE.md."""
 
 from pathlib import Path
 import numpy as np

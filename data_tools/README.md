@@ -1,6 +1,6 @@
-# Data preparation
+# CDGM Data Preparation
 
-This release contains portable data helpers adapted from [FCSDM](https://github.com/Ashores/FCSDM). They run on CPU with NumPy, Pillow, and SciPy. CDGM networks, training, evaluation, checkpoints, and experiment-specific stream configurations are **Coming soon**.
+This release contains the CDGM data preparation utilities. They run on CPU with NumPy, Pillow, and SciPy. CDGM networks, training, evaluation, checkpoints, and experiment-specific stream configurations are **Coming soon**.
 
 ## Install
 
@@ -14,7 +14,7 @@ python -m pip install -r requirements.txt
 | --- | --- |
 | `loaders.py` | Local MNIST/Fashion-MNIST IDX, CIFAR-10 Python batches, and SVHN MAT readers |
 | `image.py` | Image-file discovery, RGB conversion, center crop, resize, and normalization |
-| `streams.py` | Class-group stream ordering, optional deterministic within-group shuffle, and FCSDM five-task compatibility helpers |
+| `streams.py` | Class-group stream ordering, optional deterministic within-group shuffle, and five-task compatibility helpers |
 
 Readers return **uint8 NHWC** images and integer labels. `preprocess_image` returns **float32 CHW** images in **[-1, 1]**, replicating grayscale images into three RGB channels. It uses explicitly specified bilinear interpolation. Dataset contents are not included or downloaded automatically.
 
@@ -43,16 +43,11 @@ print(image.shape, image.dtype)  # (3, 32, 32), float32
 
 Labels are used only to arrange an evaluation stream; an unsupervised learner should consume `stream.images` without `stream.labels` or `stream.task_slices`. Train and test partitions are loaded separately. No few-shot sample count or benchmark split is inferred by these helpers.
 
-SVHN defaults to FCSDM's original `raw_label - 1` convention. Use `load_svhn(path, label_mode="digit")` only when digit identities 0–9 are intended. The two mappings lead to different class orders.
+SVHN defaults to the legacy `raw_label - 1` convention. Use `load_svhn(path, label_mode="digit")` only when digit identities 0–9 are intended. The two mappings lead to different class orders.
 
-## Provenance and cleanup
+## Source information
 
-- `FCSDM/datasets/Data_Loading.py`: IDX/SVHN reading, center crop, and normalization conventions.
-- `FCSDM/datasets/MyCIFAR10.py`: CIFAR batch reading and channel ordering.
-- `FCSDM/datasets/cv2_imageProcess.py`: image preprocessing helpers.
-- `FCSDM/Task_Split/Task_utilizes.py`: class-group ordering and five-task interfaces.
-
-This subset removes hard-coded machine paths, GPU calls, training/evaluation imports, duplicate definitions, and implicit train/test mixing. It adds input checks and explicit preprocessing choices. It is a portable data utility release; the experiment configurations associated with the manuscript will accompany the method release.
+The utilities accept explicit data paths, validate their inputs, and keep train/test partitions separate. Source attribution and adaptation notes are recorded in [PROVENANCE.md](PROVENANCE.md).
 
 ## Checks
 

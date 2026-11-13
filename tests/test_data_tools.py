@@ -1,3 +1,5 @@
+"""Regression checks for the CDGM data preparation utilities."""
+
 import gzip
 import pickle
 import struct
